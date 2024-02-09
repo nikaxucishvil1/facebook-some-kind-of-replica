@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div id="leftContent">
+            <h1>Facebook</h1>
+            <p>Connect with friends and the world around you on Facebook.</p>
+        </div>
+        <div id="rightContent">
+            <div id="card">
+                <div id="inputDiv">
+                    <input class="inputs" type="text" id="LoginInput" placeholder="Email or phone number">
+                    <span id="invalidInputSpan" style="align-self: flex-start;color: red;">input must be filled</span>
+                    <input class="inputs" type="text" id="LoginInput" placeholder="Password">
+                    <span  id="invalidInputSpan" style="align-self: flex-start;color: red;">input must be filled</span>
+                </div>
+                <button id="loginBtn">Log In</button>
+                <span id="notFoundSpan" style="font-size: 20px; color: red; ">Account not found</span>
+                <a id="forgot" style="text-decoration: none;color: #1877f2; margin: 5%; font-size: 20px;" href="youtube.com">Forgot password?</a>
+                <div id="lineDiv"></div>
+                <button id="createAccBtn">Create new accout</button>
+            </div>
+            <footer id="footer">
+                <span><a id="page" style="text-decoration: none;color: black;font-weight: bold;" href="">Create a Page</a> for celebrity, brand or business</span>
+            </footer>
+        </div>
+    </div>
+    <div id="register">
+        <div id="top">
+            <div id="RegTextDiv">
+                <h1>Sing Up</h1>
+                <p>It's quick and easy</p>
+            </div>
+        <button id="RegDelBtn">X</button>
+        </div>
+        <div id="lineDiv"></div>
+        <div id="inputsRegDiv">
+            <div id="namesInputDiv">
+                <input class="inputsValid" type="text" name="" id="namesInput" placeholder="First name">
+                <input class="inputsValid" type="text" name="" id="namesInput" placeholder="last name">
+            </div>
+            <div style="display: flex;align-items: center;justify-content: space-between;">
+                <span id="regSpan" style="align-self: flex-start;color: red;">input must be filled</span>
+                <span id="regSpan" style="align-self: flex-start;color: red;margin-right: 1.5rem;">input must be filled</span>
+            </div>
+            <div id="infoInputsDiv">
+                <input class="inputsValid" type="text" id="infoInput" placeholder="Mobile number or email">
+                <span id="regSpan" style="align-self: flex-start;color: red;">input must be filled</span>
+                <input class="inputsValid" type="text" id="infoInput" placeholder="New password">
+                <span id="regSpan" style="align-self: flex-start;color: red;">input must be filled</span>
+                <input class="inputsValid" type="text" id="AgeInput" placeholder="Your age">
+                <span id="regSpan" style="align-self: flex-start;color: red;">input must be filled</span>
+
+            </div>
+            <div id="SigUpBtnDiv">
+                <button id="SignUpRegBtn">Sign Up</button>
+            </div>
+        </div>
+        
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
