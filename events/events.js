@@ -93,7 +93,7 @@ export function createAccFoo() {
 
   signupBtn.addEventListener("click", () => {
     const inputs = document.querySelectorAll(".inputsValid");
-
+    const registerBox = document.querySelector("#register");
     const inputValues = Array.from(inputs).map((input) => input.value); // es chatgpt m chamiswora
 
     const [firstName, lastName, emailOrMobile, password, age] = inputValues; // esec damimata
@@ -112,12 +112,30 @@ export function createAccFoo() {
         password: password,
         age: age,
       });
+      registerBox.style.display = "none";
+      const registerBtn = document.querySelector("#createAccBtn");
+      const loginBox = document.querySelector("#main");
+      const loginBtn = document.querySelector("#loginBtn");
+      const forgotBtn = document.querySelector("#forgot");
+      const pageBtn = document.querySelector("#page");
+      const loginInputs = document.querySelectorAll(".inputs");
+
+      
+        loginBox.style.filter = "none";
+        loginBtn.disabled = false;
+        forgotBtn.href = "";
+        forgotBtn.style.pointerEvents = "block";
+        pageBtn.href = "";
+        pageBtn.style.pointerEvents = "block";
+        loginInputs.forEach((input) => {
+          input.disabled = false;
+        });
+      
     } else {
       console.error("something went wrong");
     }
     localStorage.setItem("data", JSON.stringify(userData));
   });
-
 
   loginCheckAcc();
 }
@@ -127,7 +145,7 @@ function loginCheckAcc() {
   const loginBtn = document.querySelector("#loginBtn");
   const accNotFoundSpan = document.querySelector("#notFoundSpan");
 
-  loginBtn.addEventListener("click", () => {
+  loginBtn.addEventListener("focus", () => {
     const loginInputsValues = Array.from(loginInputs).map(
       (input) => input.value
     );
@@ -137,7 +155,9 @@ function loginCheckAcc() {
     datas.forEach((data) => {
       if (emailOrMobile === data.loginInfo && password === data.password) {
         accNotFoundSpan.style.display = "none";
-        console.log("hello");
+        loginBtn.addEventListener("click", () => {
+          window.location.href = "http://127.0.0.1:5500/landing/landing.html";
+        });
       } else if (emailOrMobile === "" || password === "") {
         loginFoo();
       } else {
